@@ -32,7 +32,7 @@ def add_bg_from_local(image_file):
     )
 
 # ✅ Add your background image file here (place it in the same folder as this script)
-add_bg_from_local("background.jpg")  # change to your file name
+add_bg_from_local("10179962.jpg")  # change to your file name
 
 # ================================
 # 📂 CONFIGURATION
@@ -114,3 +114,4 @@ if st.button('Show recommendation'):
         with col:
             st.text(names[i])
             st.image(posters[i])
+
