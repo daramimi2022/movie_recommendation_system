@@ -5,6 +5,8 @@ import gdown
 import os
 import base64
 
+st.set_page_config(page_title="Movie Recommender", page_icon="🎬", layout="wide")
+
 # ================================
 # 🖼️ BACKGROUND IMAGE FUNCTION
 # ================================
@@ -96,7 +98,6 @@ def recommend(movie, movies, similarity):
 # ================================
 # 🖼️ STREAMLIT UI
 # ================================
-st.set_page_config(page_title="Movie Recommender", page_icon="🎬", layout="wide")
 st.header('🎬 Movies Recommendation System Using Machine Learning')
 
 # Load movies and similarity
@@ -114,4 +115,5 @@ if st.button('Show recommendation'):
         with col:
             st.text(names[i])
             st.image(posters[i])
+
 
