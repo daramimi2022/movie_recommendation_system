@@ -4,17 +4,18 @@ import requests
 import gdown
 import os
 
-# Google Drive file IDs
-MOVIE_LIST_ID = "your_movie_list_file_id"
-SIMILARITY_ID = "your_similarity_file_id"
+# ✅ Correct Google Drive file IDs
+MOVIE_LIST_ID = "1sK8ev58VOHHeNuiyvAIlxIpH6j8-jUln"
+SIMILARITY_ID = "1uWEmk1IuWDhLQdlA0AXWHe-9QylpPA3t"
 
-# Download artifacts from Google Drive if not already present
+# 📥 Download artifacts from Google Drive if not already present
 if not os.path.exists("movie_list.pkl"):
     gdown.download(f"https://drive.google.com/uc?id={MOVIE_LIST_ID}", "movie_list.pkl", quiet=False)
+
 if not os.path.exists("similarity.pkl"):
     gdown.download(f"https://drive.google.com/uc?id={SIMILARITY_ID}", "similarity.pkl", quiet=False)
 
-# Load artifacts
+# 📂 Load artifacts
 movies = pickle.load(open("movie_list.pkl", "rb"))
 similarity = pickle.load(open("similarity.pkl", "rb"))
 
@@ -38,8 +39,8 @@ def recommend(movie):
 
     return recommended_movies_name, recommended_movies_poster
 
-# Streamlit UI
-st.header('Movies Recommendation System Using Machine Learning')
+# 🖼️ Streamlit UI
+st.header('🎬 Movies Recommendation System Using Machine Learning')
 movie_list = movies['title'].values
 selected_movie = st.selectbox('Type or select a movie to get recommendation', movie_list)
 
